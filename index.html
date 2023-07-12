@@ -106,25 +106,39 @@
           <h2 class="section-header">CODE EXAMPLE</h2>
           <pre class="code-example">
             <code>
-namespace Neuro
-{
-    public class Topology
+ public class Parser
     {
-        public Int32 InputCount { get; }
-
-        public Int32 OutputCount { get; }
-
-        public Int32[] HiddenLayers { get; }
-
-        public Topology(int inputCount, int outputCount, params int[] layers)
+        public readonly Uri Uri;
+        public Parser(string Uri)
         {
-            InputCount = inputCount;
-            OutputCount = outputCount;
-            HiddenLayers = new Int32[2];
-            HiddenLayers.AddRange(layers);
+            this.Uri = new System.Uri(Uri);
         }
-    }
-}            </code> 
+
+        public string GetHtmlAsString()
+        {
+            var request = WebRequest.Create(Uri);
+            request.Headers.Add("HH-User-Agent", "application/json");
+            string responseText = null;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    int contentLength = (int)response.ContentLength;
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        responseText = streamReader.ReadToEnd();
+                        contentLength = Encoding.UTF8.GetByteCount(responseText);
+                        return responseText;
+                    }
+                }
+                else
+                {
+                    return String.Empty;
+                }
+            }
+        }
+    }            </code> 
           </pre>
         </section>
         <section id="experience-section">
