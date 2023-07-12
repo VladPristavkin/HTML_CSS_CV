@@ -5,6 +5,7 @@ body {
     margin: 0 auto;
     background: white;
 }
+
 .container {
     padding: 15px;
     background-color: #ffffff;
@@ -33,4 +34,13 @@ nav ul {
 .nav-option a:hover {
     text-decoration: underline;
     font-weight: bold;
+}
+
+.section-header {
+    margin-top: 40px;
+}
+
+img {
+    width: 80%;
+    height: auto;
 }
