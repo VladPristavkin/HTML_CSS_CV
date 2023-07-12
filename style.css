@@ -44,3 +44,16 @@ img {
     width: 80%;
     height: auto;
 }
+
+.contact-options li {
+    margin-bottom: 6px;
+}
+
+.contact-options a {
+    text-decoration: none;
+    color: black;;
+}
+
+.contact-options a:hover {
+    font-weight: bold;
+}
