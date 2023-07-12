@@ -78,3 +78,16 @@ img {
 .language-list li {
     margin-bottom: 6px;
 }
+
+footer p {
+    text-align: center;
+}
+
+footer p a {
+    color:  black;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    font-weight: bold;
+}
