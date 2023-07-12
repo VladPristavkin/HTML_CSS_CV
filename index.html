@@ -102,6 +102,31 @@
                   </li>
                 </ul>
               </section>
+                <section id="code-example-section">
+          <h2 class="section-header">CODE EXAMPLE</h2>
+          <pre class="code-example">
+            <code>
+namespace Neuro
+{
+    public class Topology
+    {
+        public Int32 InputCount { get; }
+
+        public Int32 OutputCount { get; }
+
+        public Int32[] HiddenLayers { get; }
+
+        public Topology(int inputCount, int outputCount, params int[] layers)
+        {
+            InputCount = inputCount;
+            OutputCount = outputCount;
+            HiddenLayers = new Int32[2];
+            HiddenLayers.AddRange(layers);
+        }
+    }
+}            </code> 
+          </pre>
+        </section>
         </main>
       </div>
 </body>
