@@ -66,3 +66,7 @@ img {
 .code-example {
     overflow-x: auto;
 }
+
+.experience-list li {
+    margin-bottom: 6px;
+}
