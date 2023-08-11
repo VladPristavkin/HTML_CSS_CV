@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Uladzislau Prystaukin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+          <h1>CurriculumVitae</h1>
+          <nav>
+            <ul>
+              <li class="nav-option"><a href="#contacts-section">CONTACT</a></li>
+              <li class="nav-option">
+                <a href="#general-info-section">ABOUT ME</a>
+              </li>
+              <li class="nav-option"><a href="#skills-section">SKILLS</a></li>
+              <li class="nav-option">
+                <a href="#code-example-section">CODE EXAMPLE</a>
+              </li>
+              <li class="nav-option">
+                <a href="#experience-section">EXPERIENCE</a>
+              </li>
+              <li class="nav-option"><a href="#courses-section">COURSES</a></li>
+              <li class="nav-option">
+                <a href="#languages-section">LANGUAGES</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+            <section>
+                <h2 class="section-header">Uladzislau Prystaukin</h2>
+                <img src="images/Avatar.jpg" alt="Profile Picture">
+            </section>
+            <section id="contacts-section">
+                <h2 class="section-header">CONTACT</h2>
+                <ul class="contact-options">
+                  <li>Phone: <a href="tel:+375292413998">+375 (29) 241-38-98</a></li>
+                  <li>
+                    Email:
+                    <a href="vladpristavkin@gmail.com"
+                      >vladpristavkin@gmail.com</a
+                    >
+                  </li>
+                  <li>Address: Belarus, Mogilev</li>
+                </ul>
+              </section>
+              <section id="general-info-section">
+                <h2 class="section-header">ABOUT ME</h2>
+                <p>
+                  My name is Uladzislau Prystaukin. I am a second-year student at the Belarusian-Russian University, 
+                  specialising in software engineering. At the moment I’m looking for a job and 
+                  I’m open to any suggestions and projects. My main goal is to take part in different projects 
+                  and learn something new in areas like deep learning or web application development. 
+                  My best character traits are perseverance, patience, self-reliance and a desire to develop.
+                </p>
+              </section>
+              <section id="skills-section">
+                <h2 class="section-header">SKILLS</h2>
+                <ul class="skills-list">
+                  <li>
+                    <strong>Programming languages</strong>
+                    <ul>
+                      <li>C/C++</li>
+                      <li>C#</li>
+                      <li>SQL</li>
+                      <li>JavaScript</li>
+                      <li>Python</li>
+                      <li>PHP</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Databases</strong>
+                    <ul>
+                      <li>MS Access</li>
+                      <li>MS SQL Server</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Tools</strong>
+                    <ul>
+                      <li>Figma</li>
+                      <li>Unity Engine</li>
+                      <li>Enterprice Architect</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Version Control Systems</strong>
+                    <ul>
+                      <li>Git</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Other</strong>
+                    <ul>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+                <section id="code-example-section">
+          <h2 class="section-header">CODE EXAMPLE</h2>
+          <pre class="code-example">
+            <code>
+ public class Parser
+    {
+        public readonly Uri Uri;
+        public Parser(string Uri)
+        {
+            this.Uri = new System.Uri(Uri);
+        }
+
+        public string GetHtmlAsString()
+        {
+            var request = WebRequest.Create(Uri);
+            request.Headers.Add("HH-User-Agent", "application/json");
+            string responseText = null;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    int contentLength = (int)response.ContentLength;
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
+                    {
+                        responseText = streamReader.ReadToEnd();
+                        contentLength = Encoding.UTF8.GetByteCount(responseText);
+                        return responseText;
+                    }
+                }
+                else
+                {
+                    return String.Empty;
+                }
+            }
+        }
+    }            </code> 
+          </pre>
+        </section>
+        <section id="experience-section">
+            <h2 class="section-header">EXPERIENCE</h2>
+            <ul class="experience-list">
+              <li>
+                A university project to develop a web application for the online job search service “HeadHunter”. 
+                The project aims to develop skills related to designing 
+                a user-friendly system to search and track vacancies for students.
+              </li>
+              <li>
+                <strong>CV</strong>. The CV you are reading was created as part of an internship project.
+              </li>
+              <li>
+                A project to develop a mobile application to verbally write code, and run it on various platforms. 
+              </li>
+            </ul>
+          </section>
+          <section id="courses-section">
+            <h2 class="section-header">COURSES</h2>
+            <ol class="course-list">
+              <li>Stepik Neural networks and computer vision</li>
+              <li>Junior Programmer and Creative Core (Unity Technologies)</li>
+              <li>EPAM Web Course</li>
+            </ol>
+          </section>
+          <section id="languages-section">
+            <h2 class="section-header">LANGUAGES</h2>
+            <ul class="language-list">
+              <li>Russian (Native)</li>
+              <li>English (A2)</li>
+            </ul>
+          </section>
+        </main>
+        <footer>
+            <p><a href="https://github.com/VladPristavkin">GitHub</a> | 2023</p>
+          </footer>
+      </div>
+</body>
+</html>
